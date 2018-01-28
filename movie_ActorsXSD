@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           targetNamespace="http://sample"
+	xmlns="http://sample"
+           elementFormDefault="qualified"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="Movies">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="movie" type="Movie" minOccurs="1" maxOccurs="unbounded"/>
+				<xs:element name="actor" type="Actor"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!--custom type named "Movie" -->
+	<xs:complexType name="Movie">
+		<xs:sequence>
+			<xs:element name="Title" minOccurs="1" nillable="false">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Year">
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						 <xs:pattern value="\d{4}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Genre">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Action"/>
+						<xs:enumeration value="Adventure"/>
+						<xs:enumeration value="Comedy"/>
+						<xs:enumeration value="Drama"/>
+						<xs:enumeration value="Fantasy"/>
+						<xs:enumeration value="Horror"/>
+						<xs:enumeration value="Mystery"/>
+						<xs:enumeration value="Thriller"/>
+						<xs:enumeration value="Western"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--custom type named "Actor" -->
+	<xs:complexType name="Actor">
+		<xs:sequence>
+			<xs:element name="Name" minOccurs="1" nillable="false">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+
+			<xs:element name="DateOfBirth" type="xs:date"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
+<!--
+	written by: Omar Bitar
+	Date created: 01-27-2018 
+	this project what validated useing the following link: http://www.utilities-online.info/xsdvalidation/#.WmzTkKinHIU
+	-->

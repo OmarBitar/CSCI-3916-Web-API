@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Movies xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://sample"
+       xsi:schemaLocation="http://sample person.xsd">
+
+              <movie>
+                     <Title>batman</Title>
+                     <Year>1989</Year>
+                     <Genre>Action</Genre>
+              </movie>
+              <actor>
+                     <Name>Michael Keaton</Name>
+                     <DateOfBirth>1951-09-05</DateOfBirth>
+              </actor>
+</Movies>
+<!--written by Omar Bitar
+       Date created 01-27-2018 -->
